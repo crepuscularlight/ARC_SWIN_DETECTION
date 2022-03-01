@@ -2,7 +2,7 @@
 
 This is the semester thesis deriving from the [ARC](https://riverclean.ethz.ch/) project. The whole project is composed of two parts. The first part is to train neural network to detect multiple sorts of trash collected from water. To improve the classifier detector, novel network architecture *[Swin Transformer](https://github.com/microsoft/Swin-Transformer)* has been introduced.
 
-The second part focuses on extracting information from the detected object. Basic structure is realized by python on ROS.
+The second part focuses on extracting information from the detected object. Basic structure is realized by python on ROS. [Presentation link.](https://docs.google.com/presentation/d/1OhxaD8ywghWUCG3JsuRa4cXbe1QcyK1MsItvALaK0Eg/edit#slide=id.g110f25d2ea1_2_138)
 
 ![](assets/README/ezgif.com-gif-maker(9).gif)
 
