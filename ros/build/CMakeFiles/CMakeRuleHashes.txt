@@ -1,0 +1,15 @@
+# Hashes of file build rules.
+a5376e13aafb61043ed9627e2037c88a /home/liudiyang/sp/ros/devel/include/swin_detection/Object.h
+110fadc868ac56d9bce0d7a77d1febf9 /home/liudiyang/sp/ros/devel/lib/python3/dist-packages/swin_detection/msg/_Object.py
+e77d1e1a8afd2d541d562d83bb40d600 /home/liudiyang/sp/ros/devel/lib/python3/dist-packages/swin_detection/msg/__init__.py
+18fdd73917016642645138e7d9b0dd70 /home/liudiyang/sp/ros/devel/share/common-lisp/ros/swin_detection/msg/Object.lisp
+8694782737e802b9b2a4705d5c15eb09 /home/liudiyang/sp/ros/devel/share/gennodejs/ros/swin_detection/msg/Object.js
+a3978dc4b5f5e89cbef3b89d93f72fff /home/liudiyang/sp/ros/devel/share/roseus/ros/swin_detection/manifest.l
+5e5223aa8a396f4a5cca58d860f0ebf0 /home/liudiyang/sp/ros/devel/share/roseus/ros/swin_detection/msg/Object.l
+73fbe5e6e3d2a293a1ff5bd7cdedde2e CMakeFiles/clean_test_results
+481c170bfdc6db2fc6e58dbbc506da9e swin_detection/CMakeFiles/_swin_detection_generate_messages_check_deps_Object
+e94be4e1bb3a9c4ba8dbee04b4bc78aa swin_detection/CMakeFiles/swin_detection_generate_messages_cpp
+e94be4e1bb3a9c4ba8dbee04b4bc78aa swin_detection/CMakeFiles/swin_detection_generate_messages_eus
+e94be4e1bb3a9c4ba8dbee04b4bc78aa swin_detection/CMakeFiles/swin_detection_generate_messages_lisp
+e94be4e1bb3a9c4ba8dbee04b4bc78aa swin_detection/CMakeFiles/swin_detection_generate_messages_nodejs
+e94be4e1bb3a9c4ba8dbee04b4bc78aa swin_detection/CMakeFiles/swin_detection_generate_messages_py

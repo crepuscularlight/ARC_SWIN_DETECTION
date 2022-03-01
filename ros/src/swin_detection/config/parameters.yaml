@@ -1,0 +1,5 @@
+checkpoint: "/home/liudiyang/sp/mmdetection/week17_7classes_36/latest.pth"
+config: "/home/liudiyang/sp/mmdetection/configs/sp/taco_own_extend_swin.py"
+
+
+location: "Zurich"

@@ -1,0 +1,38 @@
+<launch>
+<!--load parameters-->
+    <rosparam command="load" file="$(find swin_detection)/config/parameters.yaml" />
+<!-- show rgb image   -->
+    <node pkg="image_view" type="image_view" name="image_view" output="screen" respawn="false" ns="rgb" args="autosize True">
+        <remap from="image" to="/test_image" />
+    </node>
+
+<!--show depth image-->
+    <node pkg="image_view" type="image_view" name="image_view" output="screen" respawn="false" ns="depth">
+        <remap from="image" to="/test_depth" />
+    </node>
+
+<!-- show contour image-->
+    <node pkg="image_view" type="image_view" name="image_view" output="screen" respawn="false" ns="track">
+        <remap from="image" to="/test_contour" />
+    </node>
+
+<!-- show tracking image   -->
+    <node pkg="image_view" type="image_view" name="image_view" output="screen" respawn="false" ns="contour">
+        <remap from="image" to="/test_track" />
+    </node>
+
+<!-- show cropped image for debugging-->
+<!--    <node pkg="image_view" type="image_view" name="image_view" output="screen" respawn="false" ns="cropped_image">-->
+<!--        <remap from="image" to="/cropped_image" />-->
+<!--    </node>-->
+
+    <node pkg="swin_detection" type="object_info_subscribe_node.py" name="object_subsribe_test" output="screen"/>
+
+    <node pkg="swin_detection" type="image_process_node.py" name="image_process" output="screen"/>
+
+    <node pkg="swin_detection" type="database_save_node.py" name="save_database" output="screen"/>
+
+<!--    change rosbag file in args here-->
+    <node pkg="rosbag" type="play" name="rosbag_data" output="screen" args="-s 100  /home/liudiyang/sp/rosbag/test11.bag"/>
+
+</launch>

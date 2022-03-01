@@ -1,0 +1,2 @@
+swin_detection
+-DCATKIN_DEVEL_PREFIX=/home/liudiyang/sp/ros/devel -DCMAKE_INSTALL_PREFIX=/home/liudiyang/sp/ros/install -G Unix Makefiles
