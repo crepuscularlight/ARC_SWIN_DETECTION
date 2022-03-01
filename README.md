@@ -4,7 +4,7 @@ This is the semester thesis deriving from the [ARC](https://riverclean.ethz.ch/)
 
 The second part focuses on extracting information from the detected object. Basic structure is realized by python on ROS.
 
-
+![](assets/README/ezgif.com-gif-maker(9).gif)
 
 
 
