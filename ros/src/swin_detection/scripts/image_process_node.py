@@ -333,7 +333,7 @@ class Detection:
             cv2.imwrite(image_prefix + image_name, image_selected.img)
 
             # write image information
-            data["images"].append({"id": current_object_id, "width": 640, "height": 480,
+            data["images"].append({"id": current_object_id, "width": img.shape[1], "height": img.shape[0],
                                    "file_name": "images/" + image_name})
 
 

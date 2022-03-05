@@ -72,6 +72,7 @@ class ImageTable:
         self.id_score_image_map={}
         self.id_window=[]
         self.horrizon=120
+        self.margin=50
 
     def add(self,image_info):
         if len(self.image_info_list)<self.horrizon:
@@ -89,7 +90,7 @@ class ImageTable:
             if item.id not in self.id_score_image_map.keys():
                 self.id_score_image_map[item.id]={}
 
-            if item.bbox[1] > 50 and item.bbox[3] < 350:
+            if item.bbox[1] > self.margin and item.bbox[3] < image_info.img.shape[0]-self.margin:
                 self.id_score_image_map[item.id][item.score]=image_info
                 self.id_dict[item.id]+=1
 

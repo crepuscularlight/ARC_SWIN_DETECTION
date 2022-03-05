@@ -12,7 +12,7 @@ import cv2
 #object-id table
 object_id_table=[]
 
-#{score:message} mappint dictionary
+#{score:message} mapping dictionary
 score_msg_map={}
 
 #initalize annotation id
@@ -28,8 +28,13 @@ def do_msg(msg,args):
     global score_msg_map
     global annotation_id
 
+    threshold=10
+    margin=50
+
     # convert ros message to opencv format
     bridge = CvBridge()
+    height,width,_=bridge.imgmsg_to_cv2(msg.image_rgb).shape
+
     image_prefix=path+"/images/"
     if not os.path.exists(image_prefix):
         os.mkdir(image_prefix)
@@ -37,7 +42,7 @@ def do_msg(msg,args):
     object_id=msg.id
 
     # make sure the centroid lie in the proper area instead of on the verge
-    if msg.bbox[1] > 50 and msg.bbox[3] < 430:
+    if msg.bbox[1] > margin and msg.bbox[3] < height-margin:
         object_table.append(object_id)
 
         if not object_id in score_msg_map.keys():
@@ -47,7 +52,7 @@ def do_msg(msg,args):
         else:
             score_msg_map[object_id][msg.score]=msg
 
-    if(object_table.count(object_id)>20 and (not -1 in score_msg_map[object_id].keys())):
+    if(object_table.count(object_id)>threshold and (not -1 in score_msg_map[object_id].keys())):
         score_msg_map[object_id][-1]=0
 
         current_msg = score_msg_map[object_id][max(score_msg_map[object_id].keys())]
@@ -62,7 +67,7 @@ def do_msg(msg,args):
         cv2.imwrite(image_prefix+image_name,image)
 
         # "write image information"
-        data["images"].append({"id": current_msg.id,"width":640,"height":480,
+        data["images"].append({"id": current_msg.id,"width":width,"height":height,
                               "file_name":"images/"+image_name})
 
 

@@ -21,7 +21,10 @@ def do_msg(msg,args):
     global annotation_id
 
     threshold=10
+    margin=50
+
     bridge = CvBridge()
+    height,width,_=bridge.imgmsg_to_cv2(msg.image_rgb).shape
     # database_dir=os.path.abspath(".")+"/src/swin_detection/output/database_images/"
     if not os.path.exists(database_dir):
         os.mkdir(database_dir)
@@ -29,7 +32,7 @@ def do_msg(msg,args):
     object_id=msg.id
 
     # object_table.append(object_id)
-    if msg.bbox[1] > 50 and msg.bbox[3] < 350:
+    if msg.bbox[1] > margin and msg.bbox[3] < height-margin:
         object_table.append(object_id)
 
         if not object_id in score_msg_map.keys():
@@ -50,8 +53,8 @@ def do_msg(msg,args):
 
         x1=int(x1-padding) if x1-10>0 else 0
         y1=int(y1-padding) if y1-10>0 else 0
-        x2=int(x2+padding) if x2+10<640 else 640
-        y2=int(y2+padding) if y2+10<480 else 480
+        x2=int(x2+padding) if x2+10<width else width
+        y2=int(y2+padding) if y2+10<height else height
 
 
 
