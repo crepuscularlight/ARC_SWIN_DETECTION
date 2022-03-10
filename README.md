@@ -71,7 +71,7 @@ sudo apt-get install manpages-dev
 
 ##### Step 2. Install MMDetection
 
-Official document [here](https://mmdetection.readthedocs.io/en/v2.20.0/get_started.html)
+Official document [here](https://mmdetection.readthedocs.io/en/v2.20.0/get_started.html)  (Note: match every version carefully)ss
 
 ```
 #1.Create a conda virtual environment and activate it.
